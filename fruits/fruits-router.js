@@ -1,9 +1,10 @@
 const express = require('express');
 const knex = require('knex');
 const knexfile = require("../knexfile.js")
+const enviornment = process.env.NODE_ENV || "development" // undefined or production
 
-
-const dbConfig = knexfile.development;
+// grabs based on string instead of . based on the const enviornment. good for heroku
+const dbConfig = knexfile[enviornment]; 
 // const dbConfig = {
 //   client: 'sqlite3',
 //   connection: {
@@ -12,7 +13,7 @@ const dbConfig = knexfile.development;
 //   useNullAsDefault: true // for SQlite only
 // };
 
-const db = knex(dbConfig);
+const db = require("../data/dbConnection")
 
 const router = express.Router();
 

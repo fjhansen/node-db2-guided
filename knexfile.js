@@ -7,7 +7,7 @@ module.exports = {
     },
     useNullAsDefault: true,
   },
-
+  // staging/testing server
   staging: {
     client: 'postgresql',
     connection: {
@@ -23,7 +23,7 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   },
-
+  // production server (perhaps heroku)
   production: {
     client: 'postgresql',
     connection: {
