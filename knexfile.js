@@ -7,6 +7,13 @@ module.exports = {
     },
     useNullAsDefault: true,
   },
+  production: {
+    client: 'sqlite3',
+    connection: {
+      filename: './data/veggies.db3'
+    },
+    useNullAsDefault: true,
+  },
   // staging/testing server
   staging: {
     client: 'postgresql',
@@ -24,7 +31,7 @@ module.exports = {
     }
   },
   // production server (perhaps heroku)
-  production: {
+  oldproduction: {
     client: 'postgresql',
     connection: {
       database: 'my_db',
